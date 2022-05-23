@@ -31,10 +31,10 @@ class HomeExpenseCategory extends Component {
       <Container style={{ marginTop: "20px" }}>
         <Row>
           <Col>
-            <ExpenseCategoryList
+            {/* <ExpenseCategoryList
               expensecategories={this.state.expensecategories}
               resetState={this.resetState}
-            />
+            /> */}
           </Col>
         </Row>
         <Row>

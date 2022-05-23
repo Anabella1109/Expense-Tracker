@@ -7,6 +7,7 @@ import ConfirmRemovalModal from "./ConfirmRemovalModal";
 class IncomeCategoryList extends Component {
   render() {
     const categories = this.props.categories;
+    console.log(categories)
     return (
       <Table dark>
         <thead>
@@ -28,6 +29,7 @@ class IncomeCategoryList extends Component {
           ) : (
             categories.map(cat => (
               <tr key={cat.pk}>
+                <td>{cat.pk}</td>
                 <td>{cat.name}</td>
                 <td>{cat.description}</td>
                 

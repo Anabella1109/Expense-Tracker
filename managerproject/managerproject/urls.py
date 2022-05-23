@@ -21,9 +21,9 @@ from backend import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^api/income/$', views.income_list),
-    re_path(r'^api/income/([0-9])$', views.income_detail),
+    re_path(r'^api/income/([0-9][0-9])$', views.income_detail),
     re_path(r'^api/expense/$', views.expense_list),
-    re_path(r'^api/expense/([0-9])$', views.expense_detail),
+    re_path(r'^api/expense/([0-9][0-9])$', views.expense_detail),
     re_path(r'^api/income_category/$', views.income_category_list),
     re_path(r'^api/income_category/([0-9])$', views.income_category_detail),
     re_path(r'^api/expense_category/$', views.expense_category_list),

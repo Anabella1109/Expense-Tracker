@@ -14,6 +14,8 @@ class NewIncomeModal extends Component {
   };
 
   render() {
+    const categories=this.props.categories;
+    console.log(this.categories);
     const create = this.props.create;
 
     var title = "Editing Income";
@@ -32,8 +34,9 @@ class NewIncomeModal extends Component {
         </Button>
       );
     }
-
+    console.log(this.props.categories);
     return (
+      
       <Fragment>
         {button}
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
@@ -44,6 +47,7 @@ class NewIncomeModal extends Component {
               resetState={this.props.resetState}
               toggle={this.toggle}
               income={this.props.income}
+              categories={this.props.categories}
             />
           </ModalBody>
         </Modal>

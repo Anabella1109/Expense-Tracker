@@ -20,6 +20,7 @@ class HomeCategory extends Component {
 
   getCategories = () => {
     axios.get(API_URL1).then(res => this.setState({ categories: res.data }));
+    console.log(this.state.categories)
   };
 
   resetState = () => {
@@ -31,10 +32,10 @@ class HomeCategory extends Component {
       <Container style={{ marginTop: "20px" }}>
         <Row>
           <Col>
-            <IncomeCategoryList
+            {/* <IncomeCategoryList
               categories={this.state.categories}
               resetState={this.resetState}
-            />
+            /> */}
           </Col>
         </Row>
         <Row>

@@ -56,8 +56,51 @@ class NewExpenseForm extends React.Component {
     return value === "" ? "" : value;
   };
 
-  render() {
+  checkTotal = (amount,income,expense)=>{
+    let result=income-expense;
+    if (amount>result){
+      this.state.amount=null;
+      alert("Amount too high")
+    }
+    console.log(amount)
+    console.log(income)
+    console.log(expense)
+    console.log(result)
+  }
 
+  render() {
+   
+    const incomes=this.props.incomes;
+    const expenses=this.props.expenses;
+
+   
+    let tot=0;
+    incomes.map(amo =>(
+      tot=tot+amo.amount
+
+    ))
+    let toto=0;
+    expenses.map(amo =>(
+      toto=toto+amo.amount
+
+    ))
+    const expenseCatetegories=[
+      {
+        pk:1,
+        name:"Groceries",
+        description:"This is the amount of money spent obtaining groceries"
+      },
+      {
+        pk:2,
+        name:"Investment profit",
+        description:"Money obtained from profitable investment"
+      },
+      {
+        pk:3,
+        name:"Ikimina",
+        description:"Amount of money received from ikimina"
+      }
+    ];
 
     return (
       <Form onSubmit={this.props.income ? this.editIncome : this.createIncome}>
@@ -69,8 +112,11 @@ class NewExpenseForm extends React.Component {
             onChange={this.onChange}
             value={this.defaultIfEmpty(this.state.category)}
           >
-			  {/* <option value="Salary">Salary</option>
-              <option value="Gift">Gift</option> */}
+			{this.props.categories.map(item =>(
+  <option 
+  value={item.pk}
+  >{item.name}</option>
+         ))}
               
 		   </select>
         </FormGroup>
@@ -88,7 +134,7 @@ class NewExpenseForm extends React.Component {
             type="number"
             name="amount"
             onChange={this.onChange}
-            value={this.defaultIfEmpty(this.state.amount)}
+            value={this.checkTotal(this.state.amount,tot,toto)}
           />
         </FormGroup>
         

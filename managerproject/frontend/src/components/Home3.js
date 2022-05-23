@@ -6,11 +6,13 @@ import NewExpenseModal from "./NewExpenseModal";
 
 import axios from "axios";
 
-import { API_URL3 } from "../constants";
+import { API_URL3,API_URL2 ,API_URL} from "../constants";
 
 class HomeExpense extends Component {
   state = {
-    incomes: []
+    incomes: [],
+    categories:[],
+    expenses:[]
   };
 
   componentDidMount() {
@@ -18,7 +20,9 @@ class HomeExpense extends Component {
   }
 
   getIncomes = () => {
-    axios.get(API_URL3).then(res => this.setState({ incomes: res.data }));
+    axios.get(API_URL3).then(res => this.setState({...this.state.categories,...this.state.expenses, incomes: res.data }));
+    axios.get(API_URL2).then(res => this.setState({ ...this.state.incomes,...this.state.expenses,categories: res.data }));
+    axios.get(API_URL).then(res => this.setState({ ...this.state.incomes,...this.state.categories,expenses: res.data }));
   };
 
   resetState = () => {
@@ -29,16 +33,24 @@ class HomeExpense extends Component {
     return (
       <Container style={{ marginTop: "20px" }}>
         <Row>
+        <h1 className="text-center">List of expenses</h1>
           <Col>
             <ExpenseList
               incomes={this.state.incomes}
+              categories={this.state.categories}
               resetState={this.resetState}
             />
           </Col>
         </Row>
         <Row>
           <Col>
-            <NewExpenseModal create={true} resetState={this.resetState} />
+            <NewExpenseModal 
+            create={true} 
+            resetState={this.resetState}
+            categories={this.state.categories}
+            expenses={this.state.incomes}
+            incomes={this.state.expenses} />
+            
           </Col>
         </Row>
       </Container>

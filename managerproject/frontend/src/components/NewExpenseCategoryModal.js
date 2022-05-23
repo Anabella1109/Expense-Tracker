@@ -28,7 +28,7 @@ class NewExpenseCategoryModal extends Component {
           onClick={this.toggle}
           style={{ minWidth: "200px" }}
         >
-          Create New
+          New Expense category
         </Button>
       );
     }

@@ -10,25 +10,27 @@ import { API_URL, API_URL1 } from "../constants";
 class NewIncomeForm extends React.Component {
   state = {
     pk: 0,
-    // category: ,
+    category:0 ,
     description: "",
     amount: 0,
     // added: ""
     
   };
-  categories=this.props.categories
+  
 
   componentDidMount() {
     if (this.props.income) {
       const { pk, category, description, amount, added } = this.props.income;
+      // const categories=this.getCategories();
       this.setState({ pk, category, description, amount, added });
     }
   }
 
-  // getCategories = () => {
-  //   axios.get(API_URL1).then(res => { this.categories:res.data });
-  //   return this.categories
-  // };
+  getCategories = () => {
+   const categories=this.props.categories;
+   console.log(this.props.categories);
+   return categories;
+  };
 
  
   
@@ -59,6 +61,25 @@ class NewIncomeForm extends React.Component {
 
   render() {
     console.log(this.props.categories)
+    const incomeCatetegories=[
+      {
+        pk:1,
+        name:"Salary",
+        description:"This is the amount of money obtained as payment from my job"
+      },
+      {
+        pk:2,
+        name:"Investment profit",
+        description:"Money obtained from profitable investment"
+      },
+      {
+        pk:3,
+        name:"Ikimina",
+        description:"Amount of money received from ikimina"
+      }
+    ];
+    
+    console.log(this.getCategories())
 
     return (
       <Form onSubmit={this.props.income ? this.editIncome : this.createIncome}>
@@ -70,8 +91,11 @@ class NewIncomeForm extends React.Component {
             onChange={this.onChange}
             value={this.defaultIfEmpty(this.state.category)}
           >
-			  {/* <option value="Salary">Salary</option>
-              <option value="Gift">Gift</option> */}
+			   {this.props.categories.map(item =>(
+  <option 
+  value={item.pk}
+  >{item.name}</option>
+         ))}
               
 		   </select>
         </FormGroup>

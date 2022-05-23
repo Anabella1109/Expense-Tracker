@@ -11,9 +11,10 @@ class App extends Component {
       <Fragment>
         <Header />
         <Home />
+        <HomeExpense />
         <HomeCategory />
         <HomeExpenseCategory />
-        <HomeExpense />
+        
       </Fragment>
     );
   }

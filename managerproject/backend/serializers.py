@@ -7,11 +7,34 @@ class IncomeSerializer(serializers.ModelSerializer):
         model = Income 
         fields = ('pk', 'category', 'description', 'amount', 'added')
 
+    def to_representation(self, instance):
+        representation = dict()
+        representation["pk"] = instance.pk
+        representation["category"] = instance.category.name
+        representation["description"] = instance.description
+        representation["amount"] = instance.amount
+        representation["added"] = instance.added
+            
+
+        return representation
+
 class ExpenseSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Expense 
         fields = ('pk', 'category', 'description', 'amount', 'added')
+        # exclude=[]
+
+    def to_representation(self, instance):
+        representation = dict()
+        representation["pk"] = instance.pk
+        representation["category"] = instance.category.name
+        representation["description"] = instance.description
+        representation["amount"] = instance.amount
+        representation["added"] = instance.added
+            
+
+        return representation
 
 class IncomeCategorySerializer(serializers.ModelSerializer):
 

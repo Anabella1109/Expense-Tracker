@@ -2,13 +2,14 @@ import React, { Component } from "react";
 import { Table } from "reactstrap";
 import NewExpenseModal from "./NewExpenseModal";
 
-import ConfirmRemovalModal from "./ConfirmRemovalModal";
+import ConfirmRemovalModal1 from "./ConfirmRemovalModal1";
 
 class ExpenseList extends Component {
   render() {
     const incomes = this.props.incomes;
+    // console.log(incomes)
     return (
-      <Table dark>
+      <Table>
         <thead>
           <tr>
             <th>Category</th>
@@ -41,7 +42,7 @@ class ExpenseList extends Component {
                     resetState={this.props.resetState}
                   />
                   &nbsp;&nbsp;
-                  <ConfirmRemovalModal
+                  <ConfirmRemovalModal1
                     pk={income.pk}
                     resetState={this.props.resetState}
                   />

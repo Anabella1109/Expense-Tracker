@@ -44,6 +44,9 @@ class NewExpenseModal extends Component {
               resetState={this.props.resetState}
               toggle={this.toggle}
               income={this.props.income}
+              categories={this.props.categories}
+              incomes={this.props.incomes}
+              expenses={this.props.expenses}
             />
           </ModalBody>
         </Modal>
