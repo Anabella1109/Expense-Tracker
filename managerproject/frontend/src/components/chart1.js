@@ -4,9 +4,9 @@ import { Chart as ChartJS } from "chart.js/auto";
 
 
 
-class IncomeChart extends Component {
+class ExpenseChart extends Component {
 	render() {
-		const incomes=this.props.incomes;
+		const incomes=this.props.expenses;
 		// const expenses=this.props.expenses;
 
 		var out_data = [];
@@ -48,16 +48,16 @@ class IncomeChart extends Component {
 		return res;
 		}, {});
 
-// console.log(result)
-// 	console.log(out_data);
+console.log(result)
+	console.log(out_data);
 
-// 	console.log(data);
+	console.log(data);
 
 	const state = {
 		labels: result.map((data) => data.id),
 		datasets: [
 		  {
-			label: "Income Per Category",
+			label: "Expense Per Category",
 			data: result.map((data) => data.num),
 			backgroundColor: [
 			  "rgba(75,192,192,1)",
@@ -88,7 +88,7 @@ class IncomeChart extends Component {
 					// options={{
 					// 	title:{
 					// 	display:true,
-					// 	text:'',
+					// 	text:'Average Rainfall per month',
 					// 	fontSize:20
 					// 	},
 					// 	legend:{
@@ -102,4 +102,4 @@ class IncomeChart extends Component {
    }
 }
 
-export default IncomeChart;
+export default ExpenseChart;

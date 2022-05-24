@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Col, Container, Row } from "reactstrap";
 import ExpenseList from "./ExpenseList";
 import NewExpenseModal from "./NewExpenseModal";
+import ExpenseChart from "./chart1"
 
 
 import axios from "axios";
@@ -28,8 +29,14 @@ class HomeExpense extends Component {
   resetState = () => {
     this.getIncomes();
   };
+  functionExport=()=>{
+  
+  }
 
   render() {
+    // export const incomes=this.state.incomes;
+    // export const expenses=this.state.expenses;
+    // this.functionExport();
     return (
       <Container style={{ marginTop: "20px" }}>
         <Row>
@@ -40,6 +47,13 @@ class HomeExpense extends Component {
               categories={this.state.categories}
               resetState={this.resetState}
             />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <ExpenseChart 
+             expenses={this.state.incomes}
+             categories={this.state.categories} />
           </Col>
         </Row>
         <Row>
@@ -59,3 +73,5 @@ class HomeExpense extends Component {
 }
 
 export default HomeExpense;
+// export const expenses=expenses;
+// export const incomes=incomes;

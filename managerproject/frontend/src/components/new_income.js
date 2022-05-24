@@ -4,6 +4,7 @@ import { Button, Form, FormGroup, Input, Label } from "reactstrap";
 import axios from "axios";
 
 import { API_URL, API_URL1 } from "../constants";
+import {out_data} from "../Data";
 // import categories from "../../Home1"
 
 
@@ -29,6 +30,7 @@ class NewIncomeForm extends React.Component {
   getCategories = () => {
    const categories=this.props.categories;
    console.log(this.props.categories);
+  //  console.log(out_data);
    return categories;
   };
 
