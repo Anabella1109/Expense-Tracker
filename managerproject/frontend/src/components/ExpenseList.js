@@ -7,9 +7,10 @@ import ConfirmRemovalModal1 from "./ConfirmRemovalModal1";
 class ExpenseList extends Component {
   render() {
     const incomes = this.props.incomes;
+    const expenses = this.props.expenses;
     // console.log(incomes)
     return (
-      <Table>
+      <Table dark>
         <thead>
           <tr>
             <th>Category</th>
@@ -40,6 +41,9 @@ class ExpenseList extends Component {
                     create={false}
                     income={income}
                     resetState={this.props.resetState}
+                    expenses={this.props.incomes}
+                    incomes={this.props.expenses}
+                    categories={this.props.categories}
                   />
                   &nbsp;&nbsp;
                   <ConfirmRemovalModal1

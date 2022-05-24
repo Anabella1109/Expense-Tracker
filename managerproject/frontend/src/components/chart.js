@@ -83,6 +83,7 @@ class IncomeChart extends Component {
 		
 		return (
 		  <div style={{width:800 }}>
+			  {/* <i><h3>Chart</h3></i> */}
 				<Bar
 					data={state}
 					// options={{

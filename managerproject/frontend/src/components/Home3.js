@@ -38,22 +38,16 @@ class HomeExpense extends Component {
     // export const expenses=this.state.expenses;
     // this.functionExport();
     return (
-      <Container style={{ marginTop: "20px" }}>
+      <Container style={{ marginTop: "120px" }}>
         <Row>
-        <h1 className="text-center">List of expenses</h1>
+        <i><h1 className="text-center">List of expenses</h1></i>
           <Col>
             <ExpenseList
               incomes={this.state.incomes}
+              expenses={this.state.expenses}
               categories={this.state.categories}
               resetState={this.resetState}
             />
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <ExpenseChart 
-             expenses={this.state.incomes}
-             categories={this.state.categories} />
           </Col>
         </Row>
         <Row>
@@ -67,6 +61,14 @@ class HomeExpense extends Component {
             
           </Col>
         </Row>
+        <Row>
+          <Col>
+            <ExpenseChart 
+             expenses={this.state.incomes}
+             categories={this.state.categories} />
+          </Col>
+        </Row>
+        
       </Container>
     );
   }

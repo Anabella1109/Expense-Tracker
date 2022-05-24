@@ -24,10 +24,7 @@ class NewExpenseForm extends React.Component {
     }
   }
 
-  // getCategories = () => {
-  //   axios.get(API_URL1).then(res => { this.categories:res.data });
-  //   return this.categories
-  // };
+  
 
  
   
@@ -60,7 +57,7 @@ class NewExpenseForm extends React.Component {
     let result=income-expense;
     if (amount>result){
       this.state.amount=null;
-      alert("Amount too high")
+      alert("Maximum amount available is "+ result);
     }
     console.log(amount)
     console.log(income)
@@ -84,23 +81,23 @@ class NewExpenseForm extends React.Component {
       toto=toto+amo.amount
 
     ))
-    const expenseCatetegories=[
-      {
-        pk:1,
-        name:"Groceries",
-        description:"This is the amount of money spent obtaining groceries"
-      },
-      {
-        pk:2,
-        name:"Investment profit",
-        description:"Money obtained from profitable investment"
-      },
-      {
-        pk:3,
-        name:"Ikimina",
-        description:"Amount of money received from ikimina"
-      }
-    ];
+    // const expenseCatetegories=[
+    //   {
+    //     pk:1,
+    //     name:"Groceries",
+    //     description:"This is the amount of money spent obtaining groceries"
+    //   },
+    //   {
+    //     pk:2,
+    //     name:"Investment profit",
+    //     description:"Money obtained from profitable investment"
+    //   },
+    //   {
+    //     pk:3,
+    //     name:"Ikimina",
+    //     description:"Amount of money received from ikimina"
+    //   }
+    // ];
 
     return (
       <Form onSubmit={this.props.income ? this.editIncome : this.createIncome}>

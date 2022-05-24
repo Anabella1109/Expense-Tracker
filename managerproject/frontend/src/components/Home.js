@@ -36,22 +36,15 @@ class Home extends Component {
 
   render() {
     return (
-      <Container style={{ marginTop: "20px" }}>
+      <Container style={{ marginTop: "70px" }}>
         <Row>
-        <h1 className="text-center">List of incomes</h1>
+          <i><h1 className="text-center">List of incomes</h1></i>
           <Col>
             <IncomeList
               incomes={this.state.incomes}
               categories={this.state.categories}
               resetState={this.resetState}
             />
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <IncomeChart 
-             incomes={this.state.incomes}
-             categories={this.state.categories} />
           </Col>
         </Row>
         <Row>
@@ -63,6 +56,15 @@ class Home extends Component {
             categories={this.state.categories} />
           </Col>
         </Row>
+        <Row>
+          <Col>
+            <IncomeChart 
+             incomes={this.state.incomes}
+             categories={this.state.categories}
+              />
+          </Col>
+        </Row>
+       
       </Container>
     );
   }
