@@ -1,6 +1,8 @@
 import React, { Component, Fragment } from "react";
 import { Button, Modal, ModalHeader, ModalBody } from "reactstrap";
 import NewExpenseForm from "./NewExpense";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSquarePen } from '@fortawesome/free-solid-svg-icons'
 
 class NewExpenseModal extends Component {
   state = {

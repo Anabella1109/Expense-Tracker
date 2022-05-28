@@ -29,7 +29,7 @@ class HomeCategory extends Component {
 
   render() {
     return (
-      <Container style={{ marginTop: "20px" }}>
+      <Container style={{ marginTop: "60px" }}>
         <Row>
           <Col>
             {/* <IncomeCategoryList

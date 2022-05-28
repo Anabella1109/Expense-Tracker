@@ -3,6 +3,9 @@ import { Table } from "reactstrap";
 import NewIncomeModal from "./newIncomeModal";
 
 import ConfirmRemovalModal from "./ConfirmRemovalModal";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faWallet } from '@fortawesome/free-solid-svg-icons'
+
 
 class IncomeList extends Component {
   render() {
@@ -10,7 +13,7 @@ class IncomeList extends Component {
     const categories=this.props.categories;
     console.log(categories)
     return (
-      <Table dark>
+      <Table>
         <thead>
           <tr>
             <th>Category</th>

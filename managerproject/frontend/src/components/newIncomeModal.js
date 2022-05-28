@@ -1,6 +1,8 @@
 import React, { Component, Fragment } from "react";
 import { Button, Modal, ModalHeader, ModalBody } from "reactstrap";
 import NewIncomeForm from "./new_income";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPen, faRectangleXmark, faPlus } from '@fortawesome/free-solid-svg-icons'
 
 class NewIncomeModal extends Component {
   state = {
@@ -19,18 +21,18 @@ class NewIncomeModal extends Component {
     const create = this.props.create;
 
     var title = "Editing Income";
-    var button = <Button onClick={this.toggle}>Edit</Button>;
+    var button = <Button onClick={this.toggle} style={{backgroundColor:'White',color:'Black',border:"none"}}><FontAwesomeIcon icon={faPen} /></Button>;
     if (create) {
       title = "Creating New Income";
 
       button = (
         <Button
           color=""
-          className="float-right"
+          className="float-right but"
           onClick={this.toggle}
-          style={{ minWidth: "200px",backgroundColor:'#6a7585',color:'white'  }}
+          style={{ minWidth: "200px",backgroundColor:'White',color:'Black' ,boxShadow:"0px 10px 15px rgba(0,0,0,0.1)" }}
         >
-         Add New
+        <FontAwesomeIcon icon={faPlus} />
         </Button>
       );
     }

@@ -4,7 +4,9 @@ import { Modal, ModalHeader, Button, ModalFooter } from "reactstrap";
 import axios from "axios";
 
 import { API_URL } from "../constants";
-import { API_URL1 } from "../constants";
+import { API_URL1 } from "../constants"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSquarePen, faXmark } from '@fortawesome/free-solid-svg-icons'
 
 class ConfirmRemovalModal extends Component {
   state = {
@@ -18,7 +20,7 @@ class ConfirmRemovalModal extends Component {
   };
 
   deleteIncome = pk => {
-    axios.delete(API_URL1 + pk).then(() => {
+    axios.delete(API_URL + pk).then(() => {
       this.props.resetState();
       this.toggle();
     });
@@ -27,8 +29,8 @@ class ConfirmRemovalModal extends Component {
   render() {
     return (
       <Fragment>
-        <Button color="danger" onClick={() => this.toggle()}>
-          Remove
+        <Button color="" onClick={() => this.toggle()}>
+        <FontAwesomeIcon icon={faXmark} />
         </Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
           <ModalHeader toggle={this.toggle}>

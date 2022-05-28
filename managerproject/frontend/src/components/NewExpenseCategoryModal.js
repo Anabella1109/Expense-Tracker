@@ -24,9 +24,9 @@ class NewExpenseCategoryModal extends Component {
       button = (
         <Button
           color=""
-          className="float-right"
+          className="float-left"
           onClick={this.toggle}
-          style={{ minWidth: "200px",backgroundColor:'#6a7585',color:'white'  }}
+          style={{ minWidth: "170px",backgroundColor:'White',color:'Black' ,fontSize:"12px",marginTop:"-120px" }}
         >
           New Expense category
         </Button>

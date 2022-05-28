@@ -11,3 +11,93 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+nav{
+  position:fixed;
+  background-color:#fff;
+}
+
+
+*{
+  padding:0;
+  margin:0;
+}
+
+.containe{
+  height:100vh;
+  background-color:#fff;
+  position:relative;
+}
+
+.containe .sidebar{
+  position:fixed;
+  background-color:#fff;
+  height:60vh;
+  width:20%;
+  z-index:10;
+  text-align:center;
+  box-shadow:0px 15px 30px rgba(0,0,0,0.1);
+}
+.sidebar li:nth-child(1){
+  padding:30px 0px;
+}
+
+
+.sidebar li:hover:nth-child(1){
+  padding:30px 0px;
+  background-color:transparent;
+  color:#000;
+}
+
+.sidebar li{
+  padding:12px;
+  cursor:pointer;
+  transition:all 0.5s;
+  letter-spacing:1px;
+  display:flex;
+  flex-direction:column;
+  width: 200px;
+}
+
+.sidebar li span:nth-child(1){
+  font-size:20px;
+}
+
+.sidebar li span:nth-child(2){
+  font-size:12px;
+}
+
+.sidebar li:hover{
+  background-color:#f2f2f2;
+  padding:12px;
+  /* width: 60px; */
+   
+}
+
+.container .content{
+  
+  padding-left:75px;
+}
+.but span:hover{
+  background-color:#f2f2f2;
+  padding:12px;
+  
+   
+}
+.but span{
+  /* background-color:#f2f2f2; */
+  padding:12px;
+  width: 200px;
+  
+   
+}
+
+td{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: small;
+}
+
+th{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: small;
+}

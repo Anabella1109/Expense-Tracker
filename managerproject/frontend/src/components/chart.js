@@ -1,5 +1,5 @@
 import React, { Component,useState } from "react";
-import {Bar} from 'react-chartjs-2';
+import {Bar, Line} from 'react-chartjs-2';
 import { Chart as ChartJS } from "chart.js/auto";
 
 
@@ -82,7 +82,7 @@ class IncomeChart extends Component {
 		// console.log(out_data["Ikimina"]);
 		
 		return (
-		  <div style={{width:800 }}>
+		  <div style={{width:600 }}>
 			  {/* <i><h3>Chart</h3></i> */}
 				<Bar
 					data={state}
