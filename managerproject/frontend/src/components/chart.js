@@ -82,7 +82,7 @@ class IncomeChart extends Component {
 		// console.log(out_data["Ikimina"]);
 		
 		return (
-		  <div style={{width:600 }}>
+		  <div style={{width:650 }}>
 			  {/* <i><h3>Chart</h3></i> */}
 				<Bar
 					data={state}

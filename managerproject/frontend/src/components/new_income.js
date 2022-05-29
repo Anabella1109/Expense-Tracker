@@ -85,13 +85,14 @@ class NewIncomeForm extends React.Component {
 
     return (
       <Form onSubmit={this.props.income ? this.editIncome : this.createIncome}>
-        <FormGroup>
-          <Label for="category">Category:</Label>
+        <center><FormGroup>
+          <Label for="category" style={{fontWeight:"bold"}}>Category:</Label><br/>
           <select
             type="dropdown"
             name="category"
             onChange={this.onChange}
             value={this.defaultIfEmpty(this.state.category)}
+            style={{width:350}}
           >
 			   {this.props.categories.map(item =>(
   <option 
@@ -100,26 +101,28 @@ class NewIncomeForm extends React.Component {
          ))}
               
 		   </select>
-        </FormGroup>
-        <FormGroup>
-          <Label for="description">Description:</Label>
+        </FormGroup></center>
+        <center><FormGroup>
+          <Label for="description" style={{fontWeight:"bold"}}>Description:</Label><br/>
           <textarea
             name="description"
             onChange={this.onChange}
             value={this.defaultIfEmpty(this.state.description)}
+            style={{width:350}}
           />
-        </FormGroup>
-        <FormGroup>
-          <Label for="amount">Amount:</Label>
+        </FormGroup></center>
+        <center> <FormGroup>
+          <Label for="amount" style={{fontWeight:"bold"}}>Amount:</Label><br/>
           <Input
             type="number"
             name="amount"
             onChange={this.onChange}
             value={this.defaultIfEmpty(this.state.amount)}
+            style={{width:350}}
           />
-        </FormGroup>
+        </FormGroup></center>
         
-        <Button>Send</Button>
+        <center><Button>Add</Button></center>
       </Form>
     );
   }

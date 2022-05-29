@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import { Button, Modal, ModalHeader, ModalBody } from "reactstrap";
 import NewExpenseForm from "./NewExpense";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSquarePen } from '@fortawesome/free-solid-svg-icons'
+import { faPen, faRectangleXmark, faPlus } from '@fortawesome/free-solid-svg-icons'
 
 class NewExpenseModal extends Component {
   state = {
@@ -19,7 +19,7 @@ class NewExpenseModal extends Component {
     const create = this.props.create;
 
     var title = "Editing Expense";
-    var button = <Button onClick={this.toggle}>Edit</Button>;
+    var button = <Button onClick={this.toggle} style={{backgroundColor:'White',color:'Black',border:"none"}}><FontAwesomeIcon icon={faPen} /></Button>;
     if (create) {
       title = "Creating New Expense";
 
@@ -28,9 +28,9 @@ class NewExpenseModal extends Component {
           color=""
           className="float-right"
           onClick={this.toggle}
-          style={{ minWidth: "200px",backgroundColor:'#6a7585',color:'white' }}
+          style={{ minWidth: "200px",backgroundColor:'White',color:'Black' ,boxShadow:"0px 10px 15px rgba(0,0,0,0.1)" }}
         >
-          Add New
+          <FontAwesomeIcon icon={faPlus} />
         </Button>
       );
     }

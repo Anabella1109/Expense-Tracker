@@ -11,7 +11,12 @@ class IncomeList extends Component {
   render() {
     const incomes = this.props.incomes;
     const categories=this.props.categories;
-    console.log(categories)
+    let time="";
+    // incomes.map(income=>(
+    //   time+= income.added.toLocaleTimeString()
+    // ))
+    // console.log(time)
+    // console.log(categories)
     return (
       <Table>
         <thead>

@@ -1,5 +1,5 @@
 import React, { Component,useState } from "react";
-import {Bar} from 'react-chartjs-2';
+import {Bar,  Line} from 'react-chartjs-2';
 import { Chart as ChartJS } from "chart.js/auto";
 
 
@@ -82,8 +82,8 @@ console.log(result)
 		// console.log(out_data["Ikimina"]);
 		
 		return (
-		  <div style={{width:800 }}>
-				<Bar
+		  <div style={{width:650 }}>
+				<Line
 					data={state}
 					// options={{
 					// 	title:{

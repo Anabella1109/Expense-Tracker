@@ -26,7 +26,7 @@ class NewIncomeCategoryModal extends Component {
           color=""
           className="float-right but"
           onClick={this.toggle}
-          style={{ minWidth: "170px",backgroundColor:'White',color:'Black' ,fontSize:"12px",marginTop:"-110px" }}
+          style={{ minWidth: "170px",backgroundColor:'White',color:'Black' ,fontSize:"12px",marginTop:"-100px",marginLeft:"-10px" }}
         >
            <span>New Income category</span>
         </Button>

@@ -10,7 +10,7 @@ class ExpenseList extends Component {
     const expenses = this.props.expenses;
     // console.log(incomes)
     return (
-      <Table dark>
+      <Table>
         <thead>
           <tr>
             <th>Category</th>

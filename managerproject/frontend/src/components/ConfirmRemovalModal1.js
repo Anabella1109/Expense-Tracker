@@ -5,6 +5,8 @@ import axios from "axios";
 
 import { API_URL } from "../constants";
 import { API_URL3 } from "../constants";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSquarePen, faXmark } from '@fortawesome/free-solid-svg-icons'
 
 class ConfirmRemovalModal1 extends Component {
   state = {
@@ -27,8 +29,8 @@ class ConfirmRemovalModal1 extends Component {
   render() {
     return (
       <Fragment>
-        <Button color="danger" onClick={() => this.toggle()}>
-          Remove
+        <Button color="" onClick={() => this.toggle()}>
+        <FontAwesomeIcon icon={faXmark} />
         </Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
           <ModalHeader toggle={this.toggle}>

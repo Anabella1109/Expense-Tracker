@@ -48,29 +48,31 @@ class NewExpenseCategoryForm extends React.Component {
   render() {
     return (
       <Form onSubmit={this.props.category ? this.editIncomeCategory : this.createIncomeCategory}>
-        <FormGroup>
-          <Label for="name">Name:</Label>
+        <center><FormGroup>
+          <Label for="name" style={{fontWeight:"bold"}}>Name:</Label><br />
           <input
             type="text"
             name="name"
             onChange={this.onChange}
             value={this.defaultIfEmpty(this.state.name)}
+            style={{width:350}}
           />
 			  
               
 		   
-        </FormGroup>
-        <FormGroup>
-          <Label for="description">Description:</Label>
+        </FormGroup></center>
+        <center><FormGroup>
+          <Label for="description" style={{fontWeight:"bold"}}>Description:</Label><br />
           <textarea
             name="description"
             onChange={this.onChange}
             value={this.defaultIfEmpty(this.state.description)}
+            style={{width:350}}
           />
-        </FormGroup>
+        </FormGroup></center>
         
         
-        <Button>Send</Button>
+        <center><Button>Add</Button></center>
       </Form>
     );
   }

@@ -40,7 +40,7 @@ class HomeExpense extends Component {
     return (
       <Container style={{ marginTop: "120px" }}>
         <Row>
-        <i><h1 className="text-center">List of expenses</h1></i>
+        <i><h1 className="text-center">Expenses</h1></i>
           <Col>
             <ExpenseList
               incomes={this.state.incomes}
