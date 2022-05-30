@@ -39,6 +39,7 @@ class Home extends Component {
 
   render() {
     return (
+      
       <Container style={{ marginTop: "10px" }}>
         <Row>
         <Balance 

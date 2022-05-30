@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import '../index.css';
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import HomeCategory from "./Home1";
 import HomeExpenseCategory from "./Home2";
 
@@ -11,9 +11,24 @@ class SideNavBar extends Component{
                   
                   <ul className="sidebar">
                   <li><span>Dashboard</span></li>
-                   <li><span><i className="fa fa-home"></i></span><span>Home</span></li>
-                   <li><span><i className="fa fa-dashboard"></i></span><span>Expenses</span></li>
+                   <li><span><i className="fa fa-home"></i></span><span><NavLink
+    className="navbar-item"
+    activeClassName="is-active"
+    to="/"
+    exact
+>
+	Incomes
+</NavLink></span></li>
+                   <li><span><i className="fa fa-dashboard"></i></span><span><NavLink
+                        className="navbar-item"
+                        activeClassName="is-active"
+                        to="/expenses"
+                        exact
+                        >
+                              Expenses
+                  </NavLink></span></li>
                    
+                                    
                    <HomeCategory />
                    <HomeExpenseCategory />
                    {/* <li><Link to="/expenses">Expenses</Link></li> */}

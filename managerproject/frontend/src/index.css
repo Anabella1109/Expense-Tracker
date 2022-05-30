@@ -96,7 +96,10 @@ nav{
   
    
 }
-
+.navbar-item{
+  text-decoration: none;
+  color: black;
+}
 td{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: small;

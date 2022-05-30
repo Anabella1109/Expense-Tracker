@@ -7,42 +7,42 @@ import NavBar from "./components/navbar";
 import SideNavBar from "./components/sidenavabar";
 import { Col, Container, Row } from "reactstrap";
 import Balance from "./components/Balance"
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  // Link
+} from "react-router-dom";
 
 
 class App extends Component {
   render() {
     return (
+    <Router>
       <Fragment>
         <NavBar/>
-        {/* <Container> */}
+       
         <div className="row">
           <div className="col-md-3">
           <SideNavBar />
 
           </div>
           <div className="col-md-8">
-            {/* <Balance /> */}
-          <Home />
-            <HomeExpense />
-           
+            <Routes>
+            <Route path="/" element={<Home />} /> 
+            <Route path="/expenses" element={<HomeExpense />} /> 
+              
+            </Routes>
           </div>
           <div className="col-md-1"></div>
         </div>
-        {/* <Row>
-        <Col> */}
-        {/* </Col> */}
-        {/* <Col> */}
         
-        {/* </Col> */}
-        {/* <Col>
-      </Col> */}
-        {/* </Row> */}
-        {/* </Container>  */}
-           
-            {/* <Header /> */}
+        
             
         
       </Fragment>
+      </Router>
+    
     );
   }
 }

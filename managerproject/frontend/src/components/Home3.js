@@ -3,6 +3,7 @@ import { Col, Container, Row } from "reactstrap";
 import ExpenseList from "./ExpenseList";
 import NewExpenseModal from "./NewExpenseModal";
 import ExpenseChart from "./chart1"
+import Balance from "./Balance"
 
 
 import axios from "axios";
@@ -38,9 +39,13 @@ class HomeExpense extends Component {
     // export const expenses=this.state.expenses;
     // this.functionExport();
     return (
-      <Container style={{ marginTop: "120px" }}>
+      <Container style={{ marginTop: "10px" }}>
         <Row>
-        <i><h1 className="text-center">Expenses</h1></i>
+        <Balance 
+             expenses={this.state.incomes}
+             incomes={this.state.expenses}
+             categories={this.state.categories}
+              />
           <Col>
             <ExpenseList
               incomes={this.state.incomes}
